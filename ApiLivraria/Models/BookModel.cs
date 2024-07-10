@@ -6,7 +6,6 @@ namespace ApiLivraria.Models
     {
         public int Id { get; set; }
         public string Title { get; set; }
-        [JsonIgnore]
         public AuthorModel Author { get; set; }
     }
 }
