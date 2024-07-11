@@ -39,21 +39,21 @@ namespace ApiLivraria.Controllers
         }
 
         [HttpPost ("CriarAutor")]
-        public async Task<ActionResult<ResponseModel<AuthorModel>>> CreateNewAuthor(CreateAuthorDto authorDto)
+        public async Task<ActionResult<ResponseModel<List<AuthorModel>>>> CreateNewAuthor(CreateAuthorDto authorDto)
         {
             var author = await _authorInterface.CreateNewAuthor(authorDto);
             return Ok(author);
         }
 
         [HttpPut("EditarAutor")]
-        public async Task<ActionResult<ResponseModel<AuthorModel>>> EditAuthor(EditAuthorDto authorDto)
+        public async Task<ActionResult<ResponseModel<List<AuthorModel>>>> EditAuthor(EditAuthorDto authorDto)
         {
             var author = await _authorInterface.EditAuthor(authorDto);
             return Ok(author);
         }
 
         [HttpDelete("DeletarAutor")]
-        public async Task<ActionResult<ResponseModel<AuthorModel>>> DeleteAuthor(int authorId)
+        public async Task<ActionResult<ResponseModel<List<AuthorModel>>>> DeleteAuthor(int authorId)
         {
             var author = await _authorInterface.DeleteAuthor(authorId);
             return Ok(author);
